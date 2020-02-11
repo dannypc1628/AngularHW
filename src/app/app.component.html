@@ -178,7 +178,8 @@
         <div class="widget search">
           <div class="widget-content">
             <div id="searchbox">
-            <input (keyup)="keyin($event)"  type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
+            <input (keyup)="keyin($event.target.value)"
+            (keyup.escape)="keyesc($event.target)"  type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
               <input type="button" value="搜尋" id="searchbutton">
             </div>
             <div>目前輸入字數：{{textlength}}</div>

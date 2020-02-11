@@ -20,12 +20,12 @@ export class AppComponent {
       this.title  = 'The Will Will Web';
     }
   }
-  keyin( $event) {
-    console.log($event);
-    this.textlength = $event.target.value.length;
-    if ($event.key === 'Escape') {
-      this.textlength = 0;
-      $event.target.value = '';
-     }
+  keyin(keyword: string) {
+    console.log(keyword);
+    this.textlength = keyword.length;
+  }
+  keyesc(input: HTMLInputElement) {
+    this.textlength = 0;
+    input.value = '';
   }
 }
